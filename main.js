@@ -2,12 +2,11 @@ const electron = require('electron');
 const app = electron.app;
 const {BrowserWindow, Tray, globalShortcut} = electron;
 
-// const Tray = electron.tray;
-
 let mainWindow = null;
+let appIcon = null;
 app.on('ready', () => {
   // メニューアイコン設定
-  const appIcon = new Tray( __dirname + '/icon.png');
+  appIcon = new Tray( __dirname + '/s_icon.png');
   
   // mainWindowを作成（windowの大きさや、Kioskモードにするかどうかなどもここで定義できる）
   mainWindow = new BrowserWindow({width: 400, height: 300, show: true, icon: __dirname + '/icon.png'});
